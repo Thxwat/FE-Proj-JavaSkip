@@ -18,8 +18,8 @@ export default function Home() {
       }}>
         <Card cgName='Phu Lom Lo' imgSrc='/img/PhuLomLo.jpg'/>
         <Card cgName='White Bear Camping' imgSrc='/img/WhiteBearCamping.jpg'/>
-        <Card cgName='Area25Khaoyai' imgSrc='/img/Area25Khaoyai.jpg'/>
-        <Card cgName='KongNium Temple Viewpoint' imgSrc='/img/KongNiumTempleViewpoint.jpg'/>     
+        <Card cgName='Area25 Khaoyai' imgSrc='/img/Area25Khaoyai.jpg'/>
+        <Card cgName='Kong Nium Temple Viewpoint' imgSrc='/img/KongNiumTempleViewpoint.jpg'/>     
       </div>
     </main>
   );
