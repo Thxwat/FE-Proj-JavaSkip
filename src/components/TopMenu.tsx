@@ -2,8 +2,11 @@ import styles from "./topmenu.module.css";
 import Image from "next/image";
 import TopMenuItem from "./TopMenuItem";
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 
-export default function TopMenu() {
+export default async function TopMenu() {
+  const session = await getServerSession(authOptions);
   return (
     <div className={styles.menucontainer}>
       <Link
@@ -22,13 +25,19 @@ export default function TopMenu() {
       <div className="m-[30px] flex items-center gap-x-6 ml-auto">
         <TopMenuItem title="Book Now" pageRef="/booking" />
         <TopMenuItem title="My Booking" pageRef="/mybooking" />
-        <Link
-          href="/Login"
-          className="bg-[#FFE492] text-[#043873] font-semibold px-6 py-3 rounded-lg shadow-md 
-             hover:bg-[#FFD966] transition-all duration-300 ease-in-out"
-        >
-          Login
-        </Link>
+        {
+          session ? <Link href="/api/auth/signout">
+            <div className="bg-[#FFE492] text-[#043873] font-semibold px-6 py-3 rounded-lg shadow-md 
+            hover:bg-[#FFD966] transition-all duration-300 ease-in-out">
+              LogOut
+            </div>
+          </Link> : <Link href="/api/auth/signin">
+            <div className="bg-[#FFE492] text-[#043873] font-semibold px-6 py-3 rounded-lg shadow-md 
+            hover:bg-[#FFD966] transition-all duration-300 ease-in-out">
+              LogIn
+            </div>
+          </Link>
+        }
       </div>
     </div>
   );
