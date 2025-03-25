@@ -23,6 +23,7 @@ export default async function CGDetailPage({
           padding: "10px",
           gap: "2rem",
           marginTop: "70px",
+          flexDirection: "row",
         }}
       >
         {/* Campground Image */}
