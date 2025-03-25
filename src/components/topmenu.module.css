@@ -1,21 +1,19 @@
 .menucontainer {
-  height: 92px;
+  height: 70px;
   background-color: #043873;
   position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
   z-index: 30;
-  border-top: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
 .logoimg {
-  height: 40px;
-  width: 360px;
+  height: 30px;
+  width: auto;
   margin-left: 20px;
 }
 
@@ -26,5 +24,4 @@
   margin-bottom: auto;
   font-family: Inter, Geneva, Tahoma, sans-serif;
   color: white;
-  padding: 30px;
 }
