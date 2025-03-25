@@ -6,15 +6,16 @@ export default function TopMenu() {
     return (
         <div className={styles.menucontainer}>
             <Image 
-                src={'/img/logo.jpg'}
+                src={'/img/Logo.png'}
                 className={styles.logoimg}
                 alt='logo'
                 width={0}
                 height={0}
                 sizes="100vh"
+                
             />
-            <TopMenuItem title='Reservations' pageRef='/reservations'/>
-            <TopMenuItem title='About' pageRef='/about'/> 
+            <TopMenuItem title='Book Now' pageRef='/booking'/>
+            <TopMenuItem title='My Booking' pageRef='/mybooking'/> 
         </div> 
     )
 }
