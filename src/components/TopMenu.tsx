@@ -9,17 +9,8 @@ export default async function TopMenu() {
   const session = await getServerSession(authOptions);
   return (
     <div className={styles.menucontainer}>
-      <Link
-        href="/"
-      >
-        <Image
-          src={"/img/Logo.png"}
-          className={styles.logoimg}
-          alt="logo"
-          width={0}
-          height={0}
-          sizes="100vh"
-        />
+      <Link href="/">
+        <Image src={"/img/Logo.png"} className={styles.logoimg} alt="logo" width={0} height={0} sizes="100vh"/>
       </Link>
 
       <div className="m-[30px] flex items-center gap-x-6 ml-auto">
