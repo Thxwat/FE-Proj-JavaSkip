@@ -82,7 +82,7 @@ export default async function CGDetailPage({params}:{params:{cid:string}}) {
             <div>
               <Link
                 href="/booking"
-                className="px-6 py-2 bg-sky-500 text-[#FFE492] font-semibold rounded-lg shadow-md hover:bg-blue-700 !important transition duration-300"
+                className="px-6 py-2  text-[#FFE492] bg-sky-500 font-semibold rounded-lg shadow-md hover:bg-blue-700 !important transition duration-300"
                 style={{ backgroundColor: "#043873" }}
               >
                 Make Booking
