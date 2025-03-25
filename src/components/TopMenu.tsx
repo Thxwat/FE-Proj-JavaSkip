@@ -6,14 +6,19 @@ import Link from "next/link";
 export default function TopMenu() {
   return (
     <div className={styles.menucontainer}>
-      <Image
-        src={"/img/Logo.png"}
-        className={styles.logoimg}
-        alt="logo"
-        width={0}
-        height={0}
-        sizes="100vh"
-      />
+      <Link
+        href="/"
+      >
+        <Image
+          src={"/img/Logo.png"}
+          className={styles.logoimg}
+          alt="logo"
+          width={0}
+          height={0}
+          sizes="100vh"
+        />
+      </Link>
+
       <div className="m-[30px] flex items-center gap-x-6 ml-auto">
         <TopMenuItem title="Book Now" pageRef="/booking" />
         <TopMenuItem title="My Booking" pageRef="/mybooking" />
