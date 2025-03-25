@@ -17,7 +17,7 @@ export default async function Booking() {
     return(
         <main className="w-[100%] flex flex-col items-center space-y-4">
 
-            <div className="bg-slate-100 rounded-lg w-fit px-10 py-5 flex flex-col justify-center w-fit space-y-2">
+            <div className="bg-slate-100 rounded-lg w-fit px-10 py-5 flex flex-col justify-center space-y-2">
                 <div className="text-2xl">{profile.data.name}</div>
                 <table className="table-auto border-separate border-spacing-2"><tbody>
                 <tr><td>Email</td><td>{profile.data.email}</td></tr>
