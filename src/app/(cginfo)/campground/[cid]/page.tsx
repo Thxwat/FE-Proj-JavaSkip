@@ -6,7 +6,6 @@ import Campground from "../page"
 export default async function CGDetailPage({params}:{params:{cid:string}}) {
     
     const campgroundDetail = await getCampground(params.cid)
-    console.log("Deatail is ",campgroundDetail)
     // const mockCGRepo = new Map()
     // mockCGRepo.set("001",{name:'Phu Lom Lo',image:'/img/PhuLomLo.jpg'})
     // mockCGRepo.set("002",{name:'White Bear Camping',image:'/img/WhiteBearCamping.jpg'})
