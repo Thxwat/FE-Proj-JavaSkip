@@ -29,8 +29,7 @@ export default function Banner() {
         className="bg-[#FFE492] text-[#043872] border-[#043872]
              py-2 px-6 m-2 rounded-lg z-30 absolute bottom-0 right-0
              shadow-md hover:shadow-lg hover:bg-[#FFD966] hover:border-transparent 
-             font-semibold text-lg transition-all duration-300 ease-in-out"
-      >
+             font-semibold text-lg transition-all duration-300 ease-in-out">
         Select your Campground NOW!
       </Link>
     </div>

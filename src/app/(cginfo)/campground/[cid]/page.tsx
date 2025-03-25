@@ -5,12 +5,7 @@ import Link from "next/link";
 export default async function CGDetailPage({params}:{params:{cid:string}}) {
     
     const campgroundDetail = await getCampground(params.cid)
-    // const mockCGRepo = new Map()
-    // mockCGRepo.set("001",{name:'Phu Lom Lo',image:'/img/PhuLomLo.jpg'})
-    // mockCGRepo.set("002",{name:'White Bear Camping',image:'/img/WhiteBearCamping.jpg'})
-    // mockCGRepo.set("003",{name:'Area25 Khaoyai',image:'/img/Area25Khaoyai.jpg'})
-    // mockCGRepo.set("004",{name:'Kong Nium Temple Viewpoint',image:'/img/KongNiumTempleViewpoint.jpg'})
-
+    
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-5">
       <div className="flex flex-col md:flex-row items-center justify-center gap-8 bg-gray-100 p-20 rounded-lg shadow-lg w-full max-w-4xl ">

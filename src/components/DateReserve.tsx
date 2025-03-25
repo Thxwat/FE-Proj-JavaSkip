@@ -11,14 +11,13 @@ export default function DateReserve(){
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DatePicker className="bg-white"/>
             </LocalizationProvider>
-
-        <Select variant="standard" name="campground" id="campground"
+        {/* <Select variant="standard" name="campground" id="campground"
         className="h-[2em] w-[200px]">
             <MenuItem value="PhuLomLo">"Phu Lom Lo</MenuItem>
             <MenuItem value="WhiteBearCamping">White Bear Camping</MenuItem>
             <MenuItem value="Area25Khaoyai">Area25 Khaoyai</MenuItem>
             <MenuItem value="KongNiumTempleViewpoint">Kong Nium Temple Viewpoint</MenuItem>
-        </Select>
+        </Select> */}
         </div>
     )
 }

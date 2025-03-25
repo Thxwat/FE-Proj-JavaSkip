@@ -1,21 +1,44 @@
-'use client'
-import {DatePicker} from '@mui/x-date-pickers'
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
-import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
-import {Select, MenuItem} from '@mui/material'
+// components/LocationDateReserve.tsx
+"use client";
+import { useState } from 'react';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import dayjs, { Dayjs } from 'dayjs';
 
-export default function LocationDateReserve () {
-    return (
-        <div className='bg-slate-100 rounded-lg space-x-5 space-y-2 w-fit px-10 py-5 flex flex-row justify-center'>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker className='bg-white'/>
-            </LocalizationProvider>
-            <Select variant='standard' name='location' id="location" className='h-[2em] w-[200px]'>
-                <MenuItem value='PLL'>Phu Lom Lo</MenuItem>
-                <MenuItem value='WBC'>White Bear Camping</MenuItem>
-                <MenuItem value='A25'>Area25 Khaoyai</MenuItem>
-                <MenuItem value='KTV'>Kong Nium Temple Viewpoint</MenuItem>
-            </Select>
-        </div>
-    )
+interface LocationDateReserveProps {
+  onDateChange: (value: Dayjs) => void;
+  initialDate?: Dayjs | null;
+}
+
+export default function LocationDateReserve({ 
+  onDateChange, 
+  initialDate = null 
+}: LocationDateReserveProps) {
+  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(initialDate);
+
+  const handleDateChange = (newValue: Dayjs | null) => {
+    if (newValue) {
+      setSelectedDate(newValue);
+      onDateChange(newValue);
+    }
+  };
+
+  return (
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DatePicker
+        value={selectedDate}
+        onChange={handleDateChange}
+        slotProps={{ 
+          textField: { 
+            variant: 'standard', 
+            fullWidth: true 
+          } 
+        }}
+        // Optional: Add min and max date constraints
+        minDate={dayjs()} // Prevent selecting past dates
+        maxDate={dayjs().add(1, 'year')} // Limit to 1 year in the future
+      />
+    </LocalizationProvider>
+  );
 }
