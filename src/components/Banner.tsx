@@ -25,7 +25,7 @@ export default function Banner() {
         <h3 className="text-3xl "> Book your Campground today!</h3>
       </div>
       <Link
-        href="/booking" 
+        href="/campground" 
         className="bg-[#FFE492] text-[#043872] border-[#043872]
              py-2 px-6 m-2 rounded-lg z-30 absolute bottom-0 right-0
              shadow-md hover:shadow-lg hover:bg-[#FFD966] hover:border-transparent 
