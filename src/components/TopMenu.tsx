@@ -18,8 +18,8 @@ export default async function TopMenu() {
         <TopMenuItem title="My Booking" pageRef="/mybooking" />
         {
           session ? <Link href="/api/auth/signout">
-            <div className="bg-[#FFE492] text-[#043873] font-semibold px-6 py-3 rounded-lg shadow-md 
-            hover:bg-[#FFD966] transition-all duration-300 ease-in-out">
+            <div className="text-[#FFE492] font-semibold px-6 py-3 rounded-lg shadow-md 
+            border-2 border-[#FFE492] hover:bg-[#FFD966] transition-all duration-300 ease-in-out">
               LogOut
             </div>
           </Link> : <Link href="/api/auth/signin">
