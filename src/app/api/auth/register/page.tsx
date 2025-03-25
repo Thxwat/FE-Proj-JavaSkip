@@ -48,6 +48,7 @@ const RegisterPage: React.FC = () => {
             onSubmit={handleSubmit}
             error={error}
             success={success}
+        
         />
     );
 };
