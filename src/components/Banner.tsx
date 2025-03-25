@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from "./banner.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import {useRouter} from "next/router";
 
 export default function Banner() {
   const covers = ["/img/cover.jpg", "/img/cover2.jpg", "/img/cover3.jpg"];
