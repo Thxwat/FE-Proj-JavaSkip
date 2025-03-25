@@ -1,8 +1,8 @@
 export default async function userRegister(
-  email: string,
-  password: string,
   name: string,
-  tel: string
+  tel: string,
+  email: string,
+  password: string
 ) {
   console.log(email, password, name, tel);
   const response = await fetch("http://localhost:5000/api/v1/auth/register", {
@@ -12,6 +12,7 @@ export default async function userRegister(
     },
     body: JSON.stringify({
       name: name,
+      role: "user",
       tel: tel,
       email: email,
       password: password,
