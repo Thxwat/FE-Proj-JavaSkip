@@ -19,8 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <TopMenu />
-        {children}
-        
+        <div className="pt-[80px]">{children}</div>
       </body>
     </html>
   );

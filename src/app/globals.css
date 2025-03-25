@@ -90,7 +90,8 @@ body {
 }
 
 body {
-background-color: white;
+  background-color: white;
+  color: black;
 }
 
 a {
