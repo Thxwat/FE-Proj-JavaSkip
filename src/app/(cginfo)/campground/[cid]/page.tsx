@@ -2,19 +2,22 @@ import getCampground from "@/libs/getCampground";
 import Image from "next/image";
 import Link from "next/link";
 
-export default async function CGDetailPage({params}:{params:{cid:string}}) {
-    
-    const campgroundDetail = await getCampground(params.cid)
-    // const mockCGRepo = new Map()
-    // mockCGRepo.set("001",{name:'Phu Lom Lo',image:'/img/PhuLomLo.jpg'})
-    // mockCGRepo.set("002",{name:'White Bear Camping',image:'/img/WhiteBearCamping.jpg'})
-    // mockCGRepo.set("003",{name:'Area25 Khaoyai',image:'/img/Area25Khaoyai.jpg'})
-    // mockCGRepo.set("004",{name:'Kong Nium Temple Viewpoint',image:'/img/KongNiumTempleViewpoint.jpg'})
+export default async function CGDetailPage({
+  params,
+}: {
+  params: { cid: string };
+}) {
+  const campgroundDetail = await getCampground(params.cid);
+  // const mockCGRepo = new Map()
+  // mockCGRepo.set("001",{name:'Phu Lom Lo',image:'/img/PhuLomLo.jpg'})
+  // mockCGRepo.set("002",{name:'White Bear Camping',image:'/img/WhiteBearCamping.jpg'})
+  // mockCGRepo.set("003",{name:'Area25 Khaoyai',image:'/img/Area25Khaoyai.jpg'})
+  // mockCGRepo.set("004",{name:'Kong Nium Temple Viewpoint',image:'/img/KongNiumTempleViewpoint.jpg'})
 
   return (
     <main>
       <div
-        className="flex flex-col md:flex-row items-center justify-center gap-8 bg-gray-100 p-20 rounded-lg shadow-lg w-full max-w-4xl "
+        className="flex flex-col md:flex-row items-center justify-center gap-8 bg-sky- p-20 rounded-lg shadow-lg w-full max-w-4xl "
         style={{
           justifyContent: "center",
           padding: "10px",
@@ -83,15 +86,16 @@ export default async function CGDetailPage({params}:{params:{cid:string}}) {
               gap: "1rem", // Adjust space between the buttons
             }}
           >
-            <Link
-              href="/booking"
-              className="px-6 py-2 bg-[#043873] text-[#FFE492]
-               font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300
-               "
-              style={{ backgroundColor: "#043873" }}
-            >
-              Make Booking
-            </Link>
+            <div>
+              <Link
+                href="/booking"
+                className="px-6 py-2 bg-sky-500 text-[#FFE492] font-semibold rounded-lg shadow-md hover:bg-blue-700 !important transition duration-300"
+                style={{ backgroundColor: "#043873" }}
+              >
+                Make Booking
+              </Link>
+            </div>
+
             <Link
               href="/campground"
               className="px-6 py-2 bg-[#FFE492] text-[#043873]
