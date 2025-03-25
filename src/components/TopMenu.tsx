@@ -9,17 +9,8 @@ export default async function TopMenu() {
   const session = await getServerSession(authOptions);
   return (
     <div className={styles.menucontainer}>
-      <Link
-        href="/"
-      >
-        <Image
-          src={"/img/Logo.png"}
-          className={styles.logoimg}
-          alt="logo"
-          width={0}
-          height={0}
-          sizes="100vh"
-        />
+      <Link href="/">
+        <Image src={"/img/Logo.png"} className={styles.logoimg} alt="logo" width={0} height={0} sizes="100vh"/>
       </Link>
 
       <div className="m-[30px] flex items-center gap-x-6 ml-auto">
@@ -29,7 +20,7 @@ export default async function TopMenu() {
           session ? <Link href="/api/auth/signout">
             <div className="bg-[#FFE492] text-[#043873] font-semibold px-6 py-3 rounded-lg shadow-md 
             hover:bg-[#FFD966] transition-all duration-300 ease-in-out">
-              LogOut
+              LogOut of {session.user?.name}
             </div>
           </Link> : <Link href="/api/auth/signin">
             <div className="bg-[#FFE492] text-[#043873] font-semibold px-6 py-3 rounded-lg shadow-md 
