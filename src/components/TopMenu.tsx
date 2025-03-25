@@ -20,7 +20,7 @@ export default async function TopMenu() {
           session ? <Link href="/api/auth/signout">
             <div className="bg-[#FFE492] text-[#043873] font-semibold px-6 py-3 rounded-lg shadow-md 
             hover:bg-[#FFD966] transition-all duration-300 ease-in-out">
-              LogOut of {session.user?.name}
+              LogOut
             </div>
           </Link> : <Link href="/api/auth/signin">
             <div className="bg-[#FFE492] text-[#043873] font-semibold px-6 py-3 rounded-lg shadow-md 
