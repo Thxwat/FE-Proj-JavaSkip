@@ -4,7 +4,8 @@ import { cgJson } from "../../interface";
 import { cgItem } from "../../interface";
 
 export default function CGCatalog({cgJson}:{cgJson:cgJson}) {
-
+    // console.log(cgJson);
+    
     return (
         <>
             Explore {cgJson.count} Campgrounds in our catalog
