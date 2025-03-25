@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <main className='bg-white'>
       <Banner/>
-      <CardPanel/>
     </main>
   );
 }

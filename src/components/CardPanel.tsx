@@ -1,6 +1,19 @@
+'use client'
 import Card from '@/components/Card'
+import Link from 'next/link'
+import {useRef} from 'react'
 
 export default function CardPanel() {
+
+    let countRef = useRef(0)
+
+    const mockCGRepo = [
+        {cid:'001', name:'Phu Lom Lo',image:'/img/PhuLomLo.jpg'},
+        {cid:'002', name:'White Bear Camping',image:'/img/WhiteBearCamping.jpg'},
+        {cid:'003', name:'Area25 Khaoyai',image:'/img/Area25Khaoyai.jpg'},
+        {cid:'004', name:'Kong Nium Temple Viewpoint',image:'/img/KongNiumTempleViewpoint.jpg'}
+    ]
+
     return(
         <div>
             <div style={{
@@ -11,10 +24,14 @@ export default function CardPanel() {
                 justifyContent:"space-around", 
                 alignContent:"space-around"
             }}>
-                <Card cgName='Phu Lom Lo' imgSrc='/img/PhuLomLo.jpg'/>
-                <Card cgName='White Bear Camping' imgSrc='/img/WhiteBearCamping.jpg'/>
-                <Card cgName='Area25 Khaoyai' imgSrc='/img/Area25Khaoyai.jpg'/>
-                <Card cgName='Kong Nium Temple Viewpoint' imgSrc='/img/KongNiumTempleViewpoint.jpg'/>     
+                {
+                    mockCGRepo.map ((cgItem)=>(
+                        <Link href={`/campground/${cgItem.cid}`} className='w-1/5'>
+                            <Card cgName={cgItem.name} imgSrc={cgItem.image}/>
+                        </Link>
+                        )
+                    )
+                }
             </div>
         </div>
     )
