@@ -12,7 +12,7 @@ import { User } from "../../interface";
 export default function ReservationCart() {
     const router = useRouter();
     const { data: session } = useSession();
-    const bookItems = useAppSelector((state) => state.cartSlice.bookingItems);
+    const bookItems = useAppSelector((state) => state.cartSlice.bookingItems || []);
     const dispatch = useDispatch<AppDispatch>();
     const [error, setError] = useState<string | null>(null);
 
