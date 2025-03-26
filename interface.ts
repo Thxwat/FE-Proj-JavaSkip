@@ -27,3 +27,13 @@ export interface eachBookingItem {
   checkOut: string;
   user: string;
 }
+
+export interface User {
+  _id: string;
+  name: string;
+  role: string;
+  tel: string;
+  email: string;
+  password: string;
+  createdAt: string;
+}
