@@ -15,7 +15,8 @@ export default function DateReserve(){
             w-fit px-10 py-5 flex flex-row justify-center">
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DatePicker className="bg-white"
-                    value={reserveDate} onChange={(value)=>setReserveDate(value)}/>
+                    value={reserveDate} 
+                    onChange={(value)=>{setReserveDate(value)}}/>
             </LocalizationProvider>
         </div>
     )

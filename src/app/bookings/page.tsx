@@ -1,10 +1,15 @@
+'use client'
 import DateReserve from "@/components/DateReserve"
 import LocationReserve from "@/components/LocationReserve"
 import { getServerSession } from 'next-auth';
 import getUserProfile from "@/libs/getUserProfile"
 import { authOptions } from '../api/auth/[...nextauth]/authOptions';
+import {useState} from 'react'
+import { Dayjs } from "dayjs";
+
 
 export default async function Bookings(){
+
     const session = await getServerSession(authOptions)
     if (!session || !session.user.token) return null
   

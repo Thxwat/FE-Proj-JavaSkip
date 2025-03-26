@@ -1,3 +1,5 @@
+import { Types } from "mongoose"
+
 export interface cgItem {
     _id: string,
     name: string,
@@ -13,3 +15,12 @@ export interface cgJson {
     pagination: Object,
     data: cgItem[]
   }
+
+export interface BookingItem {
+    _id : Types.ObjectId,
+    checkIn : Date,
+    checkOut : Date,
+    user : Types.ObjectId,
+    campground : Types.ObjectId,
+    createdAt :Date
+}
