@@ -1,26 +1,41 @@
 import { Types } from "mongoose"
 
 export interface cgItem {
-    _id: string,
-    name: string,
-    address: string,
-    tel: string,
-    picture: string,
-    id: string
-  }
-  
+  _id: string;
+  name: string;
+  address: string;
+  tel: string;
+  picture: string;
+  id: string;
+}
+
 export interface cgJson {
-    success: boolean,
-    count: number,
-    pagination: Object,
-    data: cgItem[]
-  }
+  success: boolean;
+  count: number;
+  pagination: Object;
+  data: cgItem[];
+}
 
 export interface BookingItem {
-    _id : Types.ObjectId,
-    checkIn : Date,
-    checkOut : Date,
-    user : Types.ObjectId,
-    campground : Types.ObjectId,
-    createdAt :Date
+  _id: string;
+  checkIn: string;
+  checkOut: string;
+  user: string;
+}
+
+export interface eachBookingItem {
+  _id: string;
+  checkIn: string;
+  checkOut: string;
+  user: string;
+}
+
+export interface User {
+  _id: string;
+  name: string;
+  role: string;
+  tel: string;
+  email: string;
+  password: string;
+  createdAt: string;
 }

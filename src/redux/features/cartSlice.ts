@@ -1,29 +1,38 @@
-import {createSlice} from "@reduxjs/toolkit"
-import { BookingItem } from "../../../interface"
-import { PayloadAction } from "@reduxjs/toolkit"
-
+import { createSlice,PayloadAction } from "@reduxjs/toolkit";
+import { BookingItem, } from "interface";
+import { eachBookingItem } from "interface";
 
 type CartState = {
-    cgItems: BookingItem[]
+    carItems: BookingItem[]
 }
 
-const initialState:CartState = {cgItems: []}
+const initialState:CartState = { carItems:[] }
+
 export const cartSlice = createSlice({
-    name:"cart",
+    name: "cart",
     initialState,
-    reducers:{
-        addBooking: (state, action:PayloadAction<BookingItem>)=>{
-            state.cgItems.push(action.payload)
+    reducers: {
+        addReservation: (state, action:PayloadAction<BookingItem>)=>{
+            state.carItems.push(action.payload)
         },
-        removeBooking: (state, action:PayloadAction<BookingItem>)=>{
-            const remainItems = state.cgItems.filter(obj =>{
-                return ((obj.campground !== action.payload.campground)
-                ||(obj.checkIn !== action.payload.checkIn)
-                ||(obj.checkOut !== action.payload.checkOut));
+        removeReservation: (state, action:PayloadAction<BookingItem>)=>{
+            const remainItems = state.carItems.filter( obj => {
+                return ( (obj.checkIn !== action.payload.checkIn)
+                || (obj.checkOut !== action.payload.checkOut) )
             })
-            state.cgItems = remainItems
-        }
+            state.carItems = remainItems
+        },
+        updateBookingState: (state, action: PayloadAction<eachBookingItem>) => {
+            const index = state.carItems.findIndex(b => b._id === action.payload._id );
+            if (index !== -1) {
+             
+                state.carItems[index].checkIn = action.payload.checkIn;
+                state.carItems[index].checkOut = action.payload.checkOut;
+          
+            }
+        },
     }
 })
-export const {addBooking, removeBooking} = cartSlice.actions
+
+export const {addReservation, removeReservation ,updateBookingState } = cartSlice.actions
 export default cartSlice.reducer
